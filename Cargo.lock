@@ -10579,7 +10579,7 @@ dependencies = [
 [[package]]
 name = "reth-optimism-cli"
 version = "1.10.2"
-source = "git+https://github.com/paradigmxyz/reth?tag=v1.10.2#8e3b5e6a99439561b73c5dd31bd3eced2e994d60"
+source = "git+https://github.com/meyer9/reth?branch=meyer9%2Fasync-job-reth-deps#045a8b683b88c44952ce5187541f5558ff7bc934"
 dependencies = [
  "alloy-consensus",
  "alloy-eips",
@@ -10610,6 +10610,7 @@ dependencies = [
  "reth-optimism-evm",
  "reth-optimism-node",
  "reth-optimism-primitives",
+ "reth-optimism-trie",
  "reth-primitives-traits",
  "reth-provider",
  "reth-prune",
@@ -10728,7 +10729,7 @@ dependencies = [
 [[package]]
 name = "reth-optimism-node"
 version = "1.10.2"
-source = "git+https://github.com/paradigmxyz/reth?tag=v1.10.2#8e3b5e6a99439561b73c5dd31bd3eced2e994d60"
+source = "git+https://github.com/meyer9/reth?branch=meyer9%2Fasync-job-reth-deps#045a8b683b88c44952ce5187541f5558ff7bc934"
 dependencies = [
  "alloy-consensus",
  "alloy-genesis",
@@ -10737,6 +10738,7 @@ dependencies = [
  "alloy-rpc-types-eth",
  "clap",
  "eyre",
+ "humantime",
  "op-alloy-consensus",
  "op-alloy-rpc-types-engine",
  "op-revm 15.0.0",
@@ -10833,16 +10835,18 @@ dependencies = [
 [[package]]
 name = "reth-optimism-rpc"
 version = "1.10.2"
-source = "git+https://github.com/paradigmxyz/reth?tag=v1.10.2#8e3b5e6a99439561b73c5dd31bd3eced2e994d60"
+source = "git+https://github.com/meyer9/reth?branch=meyer9%2Fasync-job-reth-deps#045a8b683b88c44952ce5187541f5558ff7bc934"
 dependencies = [
  "alloy-consensus",
  "alloy-eips",
  "alloy-json-rpc",
  "alloy-primitives",
+ "alloy-rlp",
  "alloy-rpc-client",
  "alloy-rpc-types-debug",
  "alloy-rpc-types-engine",
  "alloy-rpc-types-eth",
+ "alloy-serde",
  "alloy-transport",
  "alloy-transport-http",
  "async-trait",
@@ -10860,6 +10864,7 @@ dependencies = [
  "op-alloy-rpc-types-engine",
  "op-revm 15.0.0",
  "reqwest",
+ "reth-basic-payload-builder",
  "reth-chain-state",
  "reth-chainspec",
  "reth-evm",
@@ -10871,8 +10876,12 @@ dependencies = [
  "reth-optimism-forks",
  "reth-optimism-payload-builder",
  "reth-optimism-primitives",
+ "reth-optimism-trie",
  "reth-optimism-txpool",
+ "reth-payload-util",
  "reth-primitives-traits",
+ "reth-provider",
+ "reth-revm",
  "reth-rpc",
  "reth-rpc-api",
  "reth-rpc-engine-api",
@@ -10883,7 +10892,9 @@ dependencies = [
  "reth-tasks",
  "reth-transaction-pool",
  "revm 34.0.0",
+ "serde",
  "serde_json",
+ "strum 0.27.2",
  "thiserror 2.0.17",
  "tokio",
  "tokio-stream",
@@ -10899,6 +10910,33 @@ dependencies = [
  "alloy-consensus",
  "reth-optimism-primitives",
  "reth-storage-api",
+]
+
+[[package]]
+name = "reth-optimism-trie"
+version = "1.10.2"
+source = "git+https://github.com/meyer9/reth?branch=meyer9%2Fasync-job-reth-deps#045a8b683b88c44952ce5187541f5558ff7bc934"
+dependencies = [
+ "alloy-eips",
+ "alloy-primitives",
+ "auto_impl",
+ "bincode",
+ "bytes",
+ "derive_more",
+ "reth-db",
+ "reth-evm",
+ "reth-execution-errors",
+ "reth-primitives-traits",
+ "reth-provider",
+ "reth-revm",
+ "reth-tasks",
+ "reth-trie",
+ "reth-trie-common",
+ "serde",
+ "strum 0.27.2",
+ "thiserror 2.0.17",
+ "tokio",
+ "tracing",
 ]
 
 [[package]]
